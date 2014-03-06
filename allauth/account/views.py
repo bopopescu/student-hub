@@ -86,7 +86,8 @@ class LoginView(RedirectAuthenticatedUserMixin,
                 FormView):
     form_class = LoginForm
     template_name = "account/login.html"
-    success_url = None
+    #success_url= None
+    success_url = '/home'
     redirect_field_name = "next"
 
     def form_valid(self, form):

@@ -260,3 +260,5 @@ ACCOUNT_AUTHENTICATION_METHOD ="email"
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_REQUIRED =True
 #LOGIN_REDIRECT_URLNAME='/home'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+AUTHENTICATION_BACKENDS = ('student_hub.backends.EmailAuthBackend',)

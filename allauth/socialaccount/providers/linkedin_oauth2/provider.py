@@ -37,7 +37,8 @@ class LinkedInOAuth2Provider(OAuth2Provider):
                           'last-name',
                           'email-address',
                           'picture-url',
-                          'public-profile-url']
+                          'public-profile-url',
+                          'skills']
         fields = self.get_settings().get('PROFILE_FIELDS',
                                          default_fields)
         return fields
@@ -46,7 +47,7 @@ class LinkedInOAuth2Provider(OAuth2Provider):
         scope = []
         if app_settings.QUERY_EMAIL:
             scope.append('r_emailaddress')
-            #scope.append('r_fullprofile')
+            scope.append('r_fullprofile')
         return scope
 
     def extract_common_fields(self, data):
